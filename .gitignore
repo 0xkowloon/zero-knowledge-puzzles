@@ -5,3 +5,7 @@ cache/
 .DS_Store
 
 artifacts/
+
+*.r1cs
+*.sym
+*_js/
