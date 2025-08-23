@@ -7,7 +7,18 @@ include "../node_modules/circomlib/circuits/comparators.circom";
 
 template IsSorted() {
     signal input in[4];
+    signal leq1;
+    signal leq2;
+    signal leq3;
 
+    // one line assignment to the signal
+    leq1 <== LessEqThan(252)([in[0], in[1]]);
+    leq2 <== LessEqThan(252)([in[1], in[2]]);
+    leq3 <== LessEqThan(252)([in[2], in[3]]);
+
+    leq1 === 1;
+    leq2 === 1;
+    leq3 === 1;
 }
 
 component main = IsSorted();
